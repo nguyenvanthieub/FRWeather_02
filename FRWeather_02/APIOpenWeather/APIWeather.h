@@ -13,8 +13,6 @@
 
 @interface APIWeather : NSObject
 
-@property (strong, nonatomic) NetworkService *networkService;
-
 - (void)getDataWeather:(NSString *)url complete:(void(^)(WeatherModel *weather))completeBlock;
 - (void)getDataForecast:(NSString *)url complete: (void(^)(ForecastModel *forecast))completeBlock;
 

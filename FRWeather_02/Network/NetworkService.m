@@ -10,19 +10,12 @@
 
 @implementation NetworkService
 
--(instancetype)init{
-    self = [super init];
-    if (self != nil) {
-        self.sessionManager = [AFHTTPSessionManager manager];
-    }
-    
-    return  self;
-}
 
-
--(void) getData: (NSString *)url parameter: (NSDictionary *)parameter complete: (void(^)(NSDictionary *data, NSError *error))handeBlock{
++(void)getData:(NSString *)url parameter:(NSDictionary *)parameter complete:(void(^)(NSDictionary *data, NSError *error))handeBlock{
     
-    [self.sessionManager GET: url
+    AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
+    
+    [sessionManager GET: url
                   parameters: nil
                     progress: ^(NSProgress * _Nonnull downloadProgress) {
                         

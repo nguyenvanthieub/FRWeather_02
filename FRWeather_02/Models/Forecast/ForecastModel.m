@@ -7,6 +7,7 @@
 //
 
 #import "ForecastModel.h"
+#import "Common.h"
 
 @implementation ForecastModel
 
@@ -39,10 +40,18 @@
             weather.temp_max = [NSString stringWithFormat:@"%d",temp_max];
             
             NSTimeInterval interval = [[item objectForKey:@"dt"] doubleValue];
-            NSDate *date = [NSDate dateWithTimeIntervalSince1970:interval];
-            NSDateFormatter *weekDay = [[NSDateFormatter alloc]init];
-            [weekDay setDateFormat:@"EEEE"];
-            weather.time = [weekDay stringFromDate:date];
+            weather.timeDay = [Common convertIntervalToDay:interval];
+            
+            NSString *timeHour = [item objectForKey:@"dt_txt"];
+            if (timeHour) {
+                weather.timeHour = [Common convertStringToHour:timeHour];
+            }
+            
+            NSDictionary *dicMain = [item objectForKey:@"main"];
+            if (dicMain) {
+                temp = [[[dicMain objectForKey:@"temp"] stringValue] intValue];
+                weather.temp = [NSString stringWithFormat:@"%d",temp];
+            }
             
             [forecast.weathers addObject:weather];
         }
@@ -50,6 +59,5 @@
     
     return self;
 }
-
 
 @end

@@ -25,7 +25,8 @@
 
 @property (strong, nonatomic) NSString *nameCity;
 
-@property (strong, nonatomic) NSString *time;
+@property (strong, nonatomic) NSString *timeDay;
+@property (strong, nonatomic) NSString *timeHour;
 
 -(instancetype)init : (NSDictionary *)jsonData;
 

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "APIWeather.h"
 #import "ForecastTableViewCell.h"
+#import "HeaderTableViewCell.h"
+@import GoogleMaps;
 
 @interface HomeViewController : UIViewController
 
@@ -20,6 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewForecast;
 
-@property (strong, nonatomic) NSMutableArray *weathers;
+@property (strong, nonatomic) NSMutableArray *weatherDays;
+@property (strong, nonatomic) NSMutableArray *weatherHours;
 
 @end
