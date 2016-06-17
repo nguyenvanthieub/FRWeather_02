@@ -59,7 +59,7 @@
                                 <rect key="frame" x="20" y="213" width="374" height="503"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="45" id="tbe-bg-ARV" customClass="ForecastTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="forecastCell" rowHeight="45" id="tbe-bg-ARV" customClass="ForecastTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="374" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tbe-bg-ARV" id="lXl-wB-IOH">
@@ -119,6 +119,28 @@
                                             <outlet property="imageForecast" destination="joZ-Bm-D3g" id="jZ7-8E-ZTM"/>
                                             <outlet property="tempMax" destination="aO8-rT-l5o" id="aQx-Ic-L63"/>
                                             <outlet property="tempMin" destination="0vh-pO-7Sb" id="Ln3-or-Wh7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerCell" rowHeight="70" id="mpJ-fG-Pym" customClass="HeaderTableViewCell">
+                                        <rect key="frame" x="0.0" y="73" width="374" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mpJ-fG-Pym" id="P7E-F7-Omr">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qj8-Cz-sX0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="69"/>
+                                                </scrollView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="qj8-Cz-sX0" secondAttribute="bottom" id="2If-nr-Q3s"/>
+                                                <constraint firstAttribute="trailing" secondItem="qj8-Cz-sX0" secondAttribute="trailing" id="AGI-x5-rv6"/>
+                                                <constraint firstItem="qj8-Cz-sX0" firstAttribute="top" secondItem="P7E-F7-Omr" secondAttribute="top" id="JS2-k5-HRJ"/>
+                                                <constraint firstItem="qj8-Cz-sX0" firstAttribute="leading" secondItem="P7E-F7-Omr" secondAttribute="leading" id="iOc-Bd-8qm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="scrollViewHeader" destination="qj8-Cz-sX0" id="oLF-Tv-Rsg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

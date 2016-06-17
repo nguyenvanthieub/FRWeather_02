@@ -22,7 +22,11 @@
 		5139BAD21D10165F0024F878 /* CityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BAD11D10165F0024F878 /* CityTableViewController.m */; };
 		5139BAD71D1016BD0024F878 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BAD61D1016BD0024F878 /* HomeViewController.m */; };
 		5139BADA1D1016C70024F878 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BAD91D1016C70024F878 /* LoginViewController.m */; };
-		51CEE09F1D1128050068884D /* ForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51CEE09E1D1128050068884D /* ForecastTableViewCell.m */; };
+		518C823B1D1236FC00B427FC /* ForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 518C82381D1236FB00B427FC /* ForecastTableViewCell.m */; };
+		518C823C1D1236FC00B427FC /* HeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 518C823A1D1236FC00B427FC /* HeaderTableViewCell.m */; };
+		518C82411D1239D000B427FC /* HeaderItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518C82401D1239D000B427FC /* HeaderItem.xib */; };
+		518C82441D1239FC00B427FC /* HeaderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 518C82431D1239FC00B427FC /* HeaderItem.m */; };
+		518C82481D12A33900B427FC /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 518C82471D12A33900B427FC /* Common.m */; };
 		51CEE0B51D1136360068884D /* 01d.png in Resources */ = {isa = PBXBuildFile; fileRef = 51CEE0A31D1136360068884D /* 01d.png */; };
 		51CEE0B61D1136360068884D /* 01n.png in Resources */ = {isa = PBXBuildFile; fileRef = 51CEE0A41D1136360068884D /* 01n.png */; };
 		51CEE0B71D1136360068884D /* 02d.png in Resources */ = {isa = PBXBuildFile; fileRef = 51CEE0A51D1136360068884D /* 02d.png */; };
@@ -96,8 +100,15 @@
 		5139BAD61D1016BD0024F878 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Controller/HomeWeather/HomeViewController.m; sourceTree = "<group>"; };
 		5139BAD81D1016C70024F878 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controller/Login/LoginViewController.h; sourceTree = "<group>"; };
 		5139BAD91D1016C70024F878 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controller/Login/LoginViewController.m; sourceTree = "<group>"; };
-		51CEE09D1D1128050068884D /* ForecastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForecastTableViewCell.h; path = Cell/ForecastTableViewCell.h; sourceTree = "<group>"; };
-		51CEE09E1D1128050068884D /* ForecastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForecastTableViewCell.m; path = Cell/ForecastTableViewCell.m; sourceTree = "<group>"; };
+		518C82371D1236FB00B427FC /* ForecastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForecastTableViewCell.h; path = Controller/HomeWeather/Cell/ForecastTableViewCell.h; sourceTree = "<group>"; };
+		518C82381D1236FB00B427FC /* ForecastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForecastTableViewCell.m; path = Controller/HomeWeather/Cell/ForecastTableViewCell.m; sourceTree = "<group>"; };
+		518C82391D1236FB00B427FC /* HeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderTableViewCell.h; path = Controller/HomeWeather/Cell/HeaderTableViewCell.h; sourceTree = "<group>"; };
+		518C823A1D1236FC00B427FC /* HeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderTableViewCell.m; path = Controller/HomeWeather/Cell/HeaderTableViewCell.m; sourceTree = "<group>"; };
+		518C82401D1239D000B427FC /* HeaderItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderItem.xib; path = Controller/HomeWeather/Xib/HeaderItem.xib; sourceTree = "<group>"; };
+		518C82421D1239FC00B427FC /* HeaderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderItem.h; sourceTree = "<group>"; };
+		518C82431D1239FC00B427FC /* HeaderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderItem.m; sourceTree = "<group>"; };
+		518C82461D12A33900B427FC /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		518C82471D12A33900B427FC /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		51CEE0A31D1136360068884D /* 01d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 01d.png; path = Image/01d.png; sourceTree = "<group>"; };
 		51CEE0A41D1136360068884D /* 01n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 01n.png; path = Image/01n.png; sourceTree = "<group>"; };
 		51CEE0A51D1136360068884D /* 02d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 02d.png; path = Image/02d.png; sourceTree = "<group>"; };
@@ -169,6 +180,7 @@
 		5139B9F91D0F9E270024F878 /* FRWeather_02 */ = {
 			isa = PBXGroup;
 			children = (
+				518C82451D12A29B00B427FC /* Common */,
 				51CEE0A21D1135C70068884D /* Image */,
 				5139BA4C1D0FAE8F0024F878 /* Config */,
 				5139BA481D0FAE620024F878 /* Network */,
@@ -237,6 +249,7 @@
 			children = (
 				5139BAD51D1016BD0024F878 /* HomeViewController.h */,
 				5139BAD61D1016BD0024F878 /* HomeViewController.m */,
+				518C823D1D1238E500B427FC /* Xib */,
 				51CEE0A11D1128260068884D /* Cell */,
 			);
 			name = HomeWeather;
@@ -313,11 +326,32 @@
 			name = Config;
 			sourceTree = "<group>";
 		};
+		518C823D1D1238E500B427FC /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				518C82401D1239D000B427FC /* HeaderItem.xib */,
+				518C82421D1239FC00B427FC /* HeaderItem.h */,
+				518C82431D1239FC00B427FC /* HeaderItem.m */,
+			);
+			name = Xib;
+			sourceTree = "<group>";
+		};
+		518C82451D12A29B00B427FC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				518C82461D12A33900B427FC /* Common.h */,
+				518C82471D12A33900B427FC /* Common.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		51CEE0A11D1128260068884D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				51CEE09D1D1128050068884D /* ForecastTableViewCell.h */,
-				51CEE09E1D1128050068884D /* ForecastTableViewCell.m */,
+				518C82371D1236FB00B427FC /* ForecastTableViewCell.h */,
+				518C82381D1236FB00B427FC /* ForecastTableViewCell.m */,
+				518C82391D1236FB00B427FC /* HeaderTableViewCell.h */,
+				518C823A1D1236FC00B427FC /* HeaderTableViewCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -485,6 +519,7 @@
 				51CEE0BD1D1136360068884D /* 09d.png in Resources */,
 				5139BA0A1D0F9E270024F878 /* LaunchScreen.storyboard in Resources */,
 				51CEE0BA1D1136360068884D /* 03n.png in Resources */,
+				518C82411D1239D000B427FC /* HeaderItem.xib in Resources */,
 				51CEE0B81D1136360068884D /* 02n.png in Resources */,
 				51CEE0C21D1136360068884D /* 11n.png in Resources */,
 				51CEE0B61D1136360068884D /* 01n.png in Resources */,
@@ -572,13 +607,16 @@
 				5139B9FF1D0F9E270024F878 /* AppDelegate.m in Sources */,
 				5139BAD71D1016BD0024F878 /* HomeViewController.m in Sources */,
 				5139BACF1D10161C0024F878 /* WeatherModel.m in Sources */,
+				518C823C1D1236FC00B427FC /* HeaderTableViewCell.m in Sources */,
 				5139BADA1D1016C70024F878 /* LoginViewController.m in Sources */,
+				518C82481D12A33900B427FC /* Common.m in Sources */,
 				5139BAC61D1015520024F878 /* NetworkService.m in Sources */,
 				5139BAC51D1015520024F878 /* Connection.m in Sources */,
 				5139BAD21D10165F0024F878 /* CityTableViewController.m in Sources */,
 				5139BACC1D1016150024F878 /* ForecastModel.m in Sources */,
+				518C82441D1239FC00B427FC /* HeaderItem.m in Sources */,
 				5139B9FC1D0F9E270024F878 /* main.m in Sources */,
-				51CEE09F1D1128050068884D /* ForecastTableViewCell.m in Sources */,
+				518C823B1D1236FC00B427FC /* ForecastTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

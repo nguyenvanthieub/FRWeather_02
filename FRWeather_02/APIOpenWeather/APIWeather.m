@@ -10,18 +10,10 @@
 
 @implementation APIWeather
 
-- (instancetype)init {
-    self = [super init];
-    if (self != nil) {
-        self.networkService = [NetworkService new];
-    }
-    
-    return self;
-}
 
 - (void)getDataWeather:(NSString *)url complete:(void(^)(WeatherModel *weather))completeBlock{
     
-    [self.networkService getData: url
+    [NetworkService getData: url
                        parameter: nil
                         complete: ^(NSDictionary *data, NSError *error) {
                             
@@ -31,7 +23,7 @@
 }
 
 - (void)getDataForecast:(NSString *)url complete:(void(^)(ForecastModel *forecast))completeBlock {
-    [self.networkService getData:url
+    [NetworkService getData:url
                        parameter:nil
                         complete:^(NSDictionary *data, NSError *error) {
                             

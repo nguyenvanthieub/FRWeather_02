@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) NSMutableArray *weathers;
 
+
 -(instancetype)init : (NSDictionary *)jsonDataForecast;
 
 
