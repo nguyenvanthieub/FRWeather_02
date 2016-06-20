@@ -7,11 +7,12 @@
 //
 
 #import "HomeViewController.h"
-#define CELL_HEIGHT 95
-#define FOOTER_HEIGHT 300
+#define HEADER_HEIGHT 95
+#define CELL_HEIGHT 45
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource> {
     GMSMapView *mapView;
+    BOOL firstLocationUpdate;
 }
 
 @end
@@ -22,10 +23,11 @@
     [super viewDidLoad];
     
     self.apiWeather = [APIWeather new];
+    [self loadGoogleMap];
     [self requestData];
 }
 
-- (UIView *)setupGoogleMap {
+- (void)loadGoogleMap{
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:21.016969
                                                             longitude:105.784196
                                                                  zoom:20];
@@ -33,7 +35,6 @@
     mapView.settings.compassButton = YES;
     mapView.settings.myLocationButton = YES;
     
-    // Listen to the myLocation property of GMSMapView.
     [mapView addObserver:self
                forKeyPath:@"myLocation"
                   options:NSKeyValueObservingOptionNew
@@ -43,10 +44,25 @@
         mapView.myLocationEnabled = YES;
     });
     
-    return mapView;
 }
 
+- (void)dealloc {
+    [mapView removeObserver:self
+                  forKeyPath:@"myLocation"
+                     context:NULL];
+}
 
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+    if (!firstLocationUpdate) {
+        firstLocationUpdate = YES;
+        CLLocation *location = [change objectForKey:NSKeyValueChangeNewKey];
+        mapView.camera = [GMSCameraPosition cameraWithTarget:location.coordinate
+                                                         zoom:14];
+    }
+}
 
 - (void)requestData {
     
@@ -60,12 +76,15 @@
     
     [self.apiWeather getDataForecast:URL_API_FORECAST_DAY complete:^(ForecastModel *forecast) {
         weakSelf.weatherDays = forecast.weathers;
+        [weakSelf.weatherDays addObject:mapView];
     }];
     
     [self.apiWeather getDataForecast:URL_API_FORECAST_HOUR complete:^(ForecastModel *forecast) {
         weakSelf.weatherHours = forecast.weathers;
         [weakSelf.tableViewForecast reloadData];
     }];
+    
+    
 
 }
 
@@ -75,20 +94,37 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.weatherDays.count;
+    if (self.weatherDays != nil) {
+        return self.weatherDays.count;
+    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ForecastTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"forecastCell" forIndexPath:indexPath];
+    ForecastTableViewCell *forecastCell = [tableView dequeueReusableCellWithIdentifier:@"forecastCell" forIndexPath:indexPath];
     
-    WeatherModel *weatherItem = [self.weatherDays objectAtIndex:indexPath.row];
-    [cell setCellData:weatherItem];
-    
-    return  cell;
+    if (indexPath.row == self.weatherDays.count - 1) {
+        GMSMapView *view = (GMSMapView *)self.weatherDays[indexPath.row];
+        view.frame = CGRectMake(0, 0, forecastCell.frame.size.width, CELL_HEIGHT + 200);
+        view.layer.borderWidth = 2.0f;
+        view.layer.borderColor = [UIColor blackColor].CGColor;
+        [forecastCell.contentView addSubview:view];
+    } else {
+        WeatherModel *weatherItem = [self.weatherDays objectAtIndex:indexPath.row];
+        [forecastCell setCellData:weatherItem];
+    }
+    return  forecastCell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row < self.weatherDays.count - 1) {
+        return CELL_HEIGHT;
+    }
+    return CELL_HEIGHT + 200;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return CELL_HEIGHT;
+    return HEADER_HEIGHT;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -96,18 +132,6 @@
     
     [headerCell setScrollData:self.weatherHours];
     return headerCell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return FOOTER_HEIGHT;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UIView *mapView = [UIView new];
-    
-    
-    
-    return mapView;
 }
 
 @end

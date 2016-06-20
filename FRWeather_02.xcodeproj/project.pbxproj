@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		512CAC1C1D13D491003EBF29 /* FooterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 512CAC1B1D13D491003EBF29 /* FooterTableViewCell.m */; };
 		5139B9FC1D0F9E270024F878 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139B9FB1D0F9E270024F878 /* main.m */; };
 		5139B9FF1D0F9E270024F878 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139B9FE1D0F9E270024F878 /* AppDelegate.m */; };
 		5139BA051D0F9E270024F878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5139BA031D0F9E270024F878 /* Main.storyboard */; };
@@ -69,6 +70,8 @@
 		0419204703F46AEA6D38B080 /* Pods-FRWeather_02.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRWeather_02.release.xcconfig"; path = "Pods/Target Support Files/Pods-FRWeather_02/Pods-FRWeather_02.release.xcconfig"; sourceTree = "<group>"; };
 		2F8EE508D4C202F91C93B99F /* Pods-FRWeather_02.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRWeather_02.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FRWeather_02/Pods-FRWeather_02.debug.xcconfig"; sourceTree = "<group>"; };
 		36EF2E6195B19784BF9415E8 /* libPods-FRWeather_02.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FRWeather_02.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		512CAC1A1D13D491003EBF29 /* FooterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterTableViewCell.h; sourceTree = "<group>"; };
+		512CAC1B1D13D491003EBF29 /* FooterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterTableViewCell.m; sourceTree = "<group>"; };
 		5139B9F71D0F9E270024F878 /* FRWeather_02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FRWeather_02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5139B9FB1D0F9E270024F878 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5139B9FD1D0F9E270024F878 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -352,6 +355,8 @@
 				518C82381D1236FB00B427FC /* ForecastTableViewCell.m */,
 				518C82391D1236FB00B427FC /* HeaderTableViewCell.h */,
 				518C823A1D1236FC00B427FC /* HeaderTableViewCell.m */,
+				512CAC1A1D13D491003EBF29 /* FooterTableViewCell.h */,
+				512CAC1B1D13D491003EBF29 /* FooterTableViewCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -468,6 +473,7 @@
 				TargetAttributes = {
 					5139B9F61D0F9E270024F878 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = DWAR2ZV53F;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -605,6 +611,7 @@
 			files = (
 				5139BAC91D1015BA0024F878 /* APIWeather.m in Sources */,
 				5139B9FF1D0F9E270024F878 /* AppDelegate.m in Sources */,
+				512CAC1C1D13D491003EBF29 /* FooterTableViewCell.m in Sources */,
 				5139BAD71D1016BD0024F878 /* HomeViewController.m in Sources */,
 				5139BACF1D10161C0024F878 /* WeatherModel.m in Sources */,
 				518C823C1D1236FC00B427FC /* HeaderTableViewCell.m in Sources */,
@@ -760,10 +767,14 @@
 			baseConfigurationReference = 2F8EE508D4C202F91C93B99F /* Pods-FRWeather_02.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FRWeather_02/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "BKHN.FRWeather-02";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.framgia.FRWeather-02";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -772,10 +783,14 @@
 			baseConfigurationReference = 0419204703F46AEA6D38B080 /* Pods-FRWeather_02.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FRWeather_02/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "BKHN.FRWeather-02";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.framgia.FRWeather-02";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

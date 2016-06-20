@@ -23,7 +23,7 @@
 
 - (void)setScrollData:(NSMutableArray *)scrollData {
     
-    CGFloat viewWidth = 65;
+    CGFloat viewWidth = 80;
     CGFloat viewHeight = self.scrollViewHeader.frame.size.height;
     CGFloat xPosition = 0;
     CGFloat scrollViewContentSize = 0;
