@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 @import GoogleMaps;
-#define GOOGLE_MAP_KEY @"AIzaSyCSSXZB6LvRt6QYz5IKapm9Cu-I5zGARbw"
+#define GOOGLE_MAP_KEY @"AIzaSyA3wLN5LofSkoWdZr2mSp5DK3wHEEfLudE"
 
 @interface AppDelegate ()
 

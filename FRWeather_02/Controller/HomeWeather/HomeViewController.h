@@ -10,6 +10,7 @@
 #import "APIWeather.h"
 #import "ForecastTableViewCell.h"
 #import "HeaderTableViewCell.h"
+#import "FooterTableViewCell.h"
 @import GoogleMaps;
 
 @interface HomeViewController : UIViewController
