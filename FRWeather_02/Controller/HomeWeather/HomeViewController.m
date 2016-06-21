@@ -22,9 +22,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCity:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Share" style:UIBarButtonItemStylePlain target:self action:@selector(shareFacebook:)];
+    
     self.apiWeather = [APIWeather new];
     [self loadGoogleMap];
     [self requestData];
+}
+
+- (IBAction)addCity:(id)sender {
+    
+}
+
+- (IBAction)shareFacebook:(id)sender {
+    UIGraphicsBeginImageContext(self.view.bounds.size);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *screenImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    [FacebookService shareImage:screenImage message:@"Weather today"];
 }
 
 - (void)loadGoogleMap{
@@ -83,8 +99,6 @@
         weakSelf.weatherHours = forecast.weathers;
         [weakSelf.tableViewForecast reloadData];
     }];
-    
-    
 
 }
 

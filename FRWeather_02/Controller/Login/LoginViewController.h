@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "FacebookService.h"
+#import "HomeViewController.h"
+#import "UIImageView+WebCache.h"
 
 @interface LoginViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageProfile;
+@property (weak, nonatomic) IBOutlet UILabel *nameUser;
+
+- (IBAction)btnLoginFbAction:(id)sender;
 
 @end
 

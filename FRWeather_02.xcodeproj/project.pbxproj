@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		512CAC1C1D13D491003EBF29 /* FooterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 512CAC1B1D13D491003EBF29 /* FooterTableViewCell.m */; };
+		5125E1121D17DC7E006B34DC /* HeaderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5125E1111D17DC7E006B34DC /* HeaderItem.m */; };
 		5139B9FC1D0F9E270024F878 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139B9FB1D0F9E270024F878 /* main.m */; };
 		5139B9FF1D0F9E270024F878 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139B9FE1D0F9E270024F878 /* AppDelegate.m */; };
 		5139BA051D0F9E270024F878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5139BA031D0F9E270024F878 /* Main.storyboard */; };
@@ -23,10 +23,10 @@
 		5139BAD21D10165F0024F878 /* CityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BAD11D10165F0024F878 /* CityTableViewController.m */; };
 		5139BAD71D1016BD0024F878 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BAD61D1016BD0024F878 /* HomeViewController.m */; };
 		5139BADA1D1016C70024F878 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BAD91D1016C70024F878 /* LoginViewController.m */; };
+		514D943A1D18D36100A77155 /* FacebookService.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D94391D18D36100A77155 /* FacebookService.m */; };
 		518C823B1D1236FC00B427FC /* ForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 518C82381D1236FB00B427FC /* ForecastTableViewCell.m */; };
 		518C823C1D1236FC00B427FC /* HeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 518C823A1D1236FC00B427FC /* HeaderTableViewCell.m */; };
 		518C82411D1239D000B427FC /* HeaderItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518C82401D1239D000B427FC /* HeaderItem.xib */; };
-		518C82441D1239FC00B427FC /* HeaderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 518C82431D1239FC00B427FC /* HeaderItem.m */; };
 		518C82481D12A33900B427FC /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 518C82471D12A33900B427FC /* Common.m */; };
 		51CEE0B51D1136360068884D /* 01d.png in Resources */ = {isa = PBXBuildFile; fileRef = 51CEE0A31D1136360068884D /* 01d.png */; };
 		51CEE0B61D1136360068884D /* 01n.png in Resources */ = {isa = PBXBuildFile; fileRef = 51CEE0A41D1136360068884D /* 01n.png */; };
@@ -70,8 +70,8 @@
 		0419204703F46AEA6D38B080 /* Pods-FRWeather_02.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRWeather_02.release.xcconfig"; path = "Pods/Target Support Files/Pods-FRWeather_02/Pods-FRWeather_02.release.xcconfig"; sourceTree = "<group>"; };
 		2F8EE508D4C202F91C93B99F /* Pods-FRWeather_02.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRWeather_02.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FRWeather_02/Pods-FRWeather_02.debug.xcconfig"; sourceTree = "<group>"; };
 		36EF2E6195B19784BF9415E8 /* libPods-FRWeather_02.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FRWeather_02.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		512CAC1A1D13D491003EBF29 /* FooterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterTableViewCell.h; sourceTree = "<group>"; };
-		512CAC1B1D13D491003EBF29 /* FooterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterTableViewCell.m; sourceTree = "<group>"; };
+		5125E1101D17DC7E006B34DC /* HeaderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderItem.h; path = Controller/HomeWeather/Xib/HeaderItem.h; sourceTree = "<group>"; };
+		5125E1111D17DC7E006B34DC /* HeaderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderItem.m; path = Controller/HomeWeather/Xib/HeaderItem.m; sourceTree = "<group>"; };
 		5139B9F71D0F9E270024F878 /* FRWeather_02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FRWeather_02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5139B9FB1D0F9E270024F878 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5139B9FD1D0F9E270024F878 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,13 +103,13 @@
 		5139BAD61D1016BD0024F878 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Controller/HomeWeather/HomeViewController.m; sourceTree = "<group>"; };
 		5139BAD81D1016C70024F878 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controller/Login/LoginViewController.h; sourceTree = "<group>"; };
 		5139BAD91D1016C70024F878 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controller/Login/LoginViewController.m; sourceTree = "<group>"; };
+		514D94381D18D36100A77155 /* FacebookService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookService.h; sourceTree = "<group>"; };
+		514D94391D18D36100A77155 /* FacebookService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookService.m; sourceTree = "<group>"; };
 		518C82371D1236FB00B427FC /* ForecastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForecastTableViewCell.h; path = Controller/HomeWeather/Cell/ForecastTableViewCell.h; sourceTree = "<group>"; };
 		518C82381D1236FB00B427FC /* ForecastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForecastTableViewCell.m; path = Controller/HomeWeather/Cell/ForecastTableViewCell.m; sourceTree = "<group>"; };
 		518C82391D1236FB00B427FC /* HeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderTableViewCell.h; path = Controller/HomeWeather/Cell/HeaderTableViewCell.h; sourceTree = "<group>"; };
 		518C823A1D1236FC00B427FC /* HeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderTableViewCell.m; path = Controller/HomeWeather/Cell/HeaderTableViewCell.m; sourceTree = "<group>"; };
 		518C82401D1239D000B427FC /* HeaderItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderItem.xib; path = Controller/HomeWeather/Xib/HeaderItem.xib; sourceTree = "<group>"; };
-		518C82421D1239FC00B427FC /* HeaderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderItem.h; sourceTree = "<group>"; };
-		518C82431D1239FC00B427FC /* HeaderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderItem.m; sourceTree = "<group>"; };
 		518C82461D12A33900B427FC /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		518C82471D12A33900B427FC /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		51CEE0A31D1136360068884D /* 01d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 01d.png; path = Image/01d.png; sourceTree = "<group>"; };
@@ -317,6 +317,8 @@
 				5139BAC21D1015520024F878 /* Connection.m */,
 				5139BAC31D1015520024F878 /* NetworkService.h */,
 				5139BAC41D1015520024F878 /* NetworkService.m */,
+				514D94381D18D36100A77155 /* FacebookService.h */,
+				514D94391D18D36100A77155 /* FacebookService.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -333,8 +335,8 @@
 			isa = PBXGroup;
 			children = (
 				518C82401D1239D000B427FC /* HeaderItem.xib */,
-				518C82421D1239FC00B427FC /* HeaderItem.h */,
-				518C82431D1239FC00B427FC /* HeaderItem.m */,
+				5125E1101D17DC7E006B34DC /* HeaderItem.h */,
+				5125E1111D17DC7E006B34DC /* HeaderItem.m */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -355,8 +357,6 @@
 				518C82381D1236FB00B427FC /* ForecastTableViewCell.m */,
 				518C82391D1236FB00B427FC /* HeaderTableViewCell.h */,
 				518C823A1D1236FC00B427FC /* HeaderTableViewCell.m */,
-				512CAC1A1D13D491003EBF29 /* FooterTableViewCell.h */,
-				512CAC1B1D13D491003EBF29 /* FooterTableViewCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -611,8 +611,9 @@
 			files = (
 				5139BAC91D1015BA0024F878 /* APIWeather.m in Sources */,
 				5139B9FF1D0F9E270024F878 /* AppDelegate.m in Sources */,
-				512CAC1C1D13D491003EBF29 /* FooterTableViewCell.m in Sources */,
+				514D943A1D18D36100A77155 /* FacebookService.m in Sources */,
 				5139BAD71D1016BD0024F878 /* HomeViewController.m in Sources */,
+				5125E1121D17DC7E006B34DC /* HeaderItem.m in Sources */,
 				5139BACF1D10161C0024F878 /* WeatherModel.m in Sources */,
 				518C823C1D1236FC00B427FC /* HeaderTableViewCell.m in Sources */,
 				5139BADA1D1016C70024F878 /* LoginViewController.m in Sources */,
@@ -621,7 +622,6 @@
 				5139BAC51D1015520024F878 /* Connection.m in Sources */,
 				5139BAD21D10165F0024F878 /* CityTableViewController.m in Sources */,
 				5139BACC1D1016150024F878 /* ForecastModel.m in Sources */,
-				518C82441D1239FC00B427FC /* HeaderItem.m in Sources */,
 				5139B9FC1D0F9E270024F878 /* main.m in Sources */,
 				518C823B1D1236FC00B427FC /* ForecastTableViewCell.m in Sources */,
 			);
@@ -769,6 +769,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FRWeather_02/Framework",
+				);
 				INFOPLIST_FILE = FRWeather_02/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -785,6 +789,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FRWeather_02/Framework",
+				);
 				INFOPLIST_FILE = FRWeather_02/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
