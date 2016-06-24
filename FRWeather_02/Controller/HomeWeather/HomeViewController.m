@@ -7,10 +7,11 @@
 //
 
 #import "HomeViewController.h"
+#import "ListCityTableViewController.h"
 #define HEADER_HEIGHT 95
 #define CELL_HEIGHT 45
 
-@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource> {
+@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, GetWeatherWithPositionDelegate> {
     GMSMapView *mapView;
     BOOL firstLocationUpdate;
 }
@@ -21,17 +22,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.title = @"HOME";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCity:)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Share" style:UIBarButtonItemStylePlain target:self action:@selector(shareFacebook:)];
-    
     self.apiWeather = [APIWeather new];
-    [self loadGoogleMap];
     [self requestData];
 }
 
 - (IBAction)addCity:(id)sender {
-    
+    [self goListCity];
+}
+
+-(void)goListCity {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ListCityTableViewController *listCity = [sb instantiateViewControllerWithIdentifier:@"ListCityTableViewController"];
+    listCity.delegate = self;
+    [self.navigationController pushViewController:listCity animated:true];
 }
 
 - (IBAction)shareFacebook:(id)sender {
@@ -39,67 +45,44 @@
     [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *screenImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
     [FacebookService shareImage:screenImage message:@"Weather today"];
 }
 
-- (void)loadGoogleMap{
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:21.016969
-                                                            longitude:105.784196
-                                                                 zoom:20];
+- (void)loadGoogleMap:(Position *)position {
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:position.lat
+                                                            longitude:position.lon
+                                                                 zoom:10];
     mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    mapView.settings.compassButton = YES;
-    mapView.settings.myLocationButton = YES;
-    
-    [mapView addObserver:self
-               forKeyPath:@"myLocation"
-                  options:NSKeyValueObservingOptionNew
-                  context:NULL];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        mapView.myLocationEnabled = YES;
-    });
-    
-}
-
-- (void)dealloc {
-    [mapView removeObserver:self
-                  forKeyPath:@"myLocation"
-                     context:NULL];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context {
-    if (!firstLocationUpdate) {
-        firstLocationUpdate = YES;
-        CLLocation *location = [change objectForKey:NSKeyValueChangeNewKey];
-        mapView.camera = [GMSCameraPosition cameraWithTarget:location.coordinate
-                                                         zoom:14];
-    }
 }
 
 - (void)requestData {
-    
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    double lat = [userDefault doubleForKey:@"currentLat"];
+    double lon = [userDefault doubleForKey:@"currentLon"];
+    Position *position = [Position new];
+    position.lat = lat;
+    position.lon = lon;
+    [self requestDataPosition:position];
+}
+
+- (void)requestDataPosition:(Position *)position {
     __block HomeViewController  *weakSelf = self;
-    
-    [self.apiWeather getDataWeather:URL_API_WEATHER complete:^(WeatherModel *weather) {
+    [self.apiWeather getDataWeather:URL_WEATHER andPosition:position complete:^(WeatherModel *weather) {
         weakSelf.city.text = weather.nameCity;
         weakSelf.weatherDescription.text = weather.weatherName;
         weakSelf.weatherTmp.text = [NSString stringWithFormat:@"%@ °",weather.temp_min];
     }];
     
-    [self.apiWeather getDataForecast:URL_API_FORECAST_DAY complete:^(ForecastModel *forecast) {
+    [self.apiWeather getDataForecast:URL_FORECAST_DAY andPosition:position isForecast:TRUE complete:^(ForecastModel *forecast) {
         weakSelf.weatherDays = forecast.weathers;
+        [weakSelf loadGoogleMap:position];
         [weakSelf.weatherDays addObject:mapView];
     }];
     
-    [self.apiWeather getDataForecast:URL_API_FORECAST_HOUR complete:^(ForecastModel *forecast) {
+    [self.apiWeather getDataForecast:URL_FORECAST_HOUR andPosition:position isForecast:FALSE complete:^(ForecastModel *forecast) {
         weakSelf.weatherHours = forecast.weathers;
         [weakSelf.tableViewForecast reloadData];
     }];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -108,10 +91,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.weatherDays != nil) {
-        return self.weatherDays.count;
-    }
-    return 0;
+    return self.weatherDays.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -146,6 +126,10 @@
     
     [headerCell setScrollData:self.weatherHours];
     return headerCell;
+}
+
+-(void)getWeatherPosition:(Position *)position {
+    [self requestDataPosition:position];
 }
 
 @end

@@ -10,10 +10,11 @@
 #import "NetworkService.h"
 #import "ForecastModel.h"
 #import "WeatherModel.h"
+#import "Position.h"
 
 @interface APIWeather : NSObject
 
-- (void)getDataWeather:(NSString *)url complete:(void(^)(WeatherModel *weather))completeBlock;
-- (void)getDataForecast:(NSString *)url complete: (void(^)(ForecastModel *forecast))completeBlock;
+- (void)getDataWeather:(NSString *)url andPosition:(Position *)position complete:(void(^)(WeatherModel *weather))completeBlock;
+- (void)getDataForecast:(NSString *)url andPosition:(Position *)position isForecast:(BOOL)isForecast complete: (void(^)(ForecastModel *forecast))completeBlock;
 
 @end

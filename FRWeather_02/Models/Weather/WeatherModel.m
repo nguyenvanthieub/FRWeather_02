@@ -13,7 +13,6 @@
 -(instancetype)init:(NSDictionary *)jsonData {
     self = [super init];
     if (self != nil) {
-        
         WeatherModel *weather = self;
         
         NSDictionary *dicWeather = [[jsonData objectForKey:@"weather"] objectAtIndex:0];
@@ -34,9 +33,7 @@
         NSDictionary *dicWind = [jsonData objectForKey:@"wind"];
         weather.windSpeed = [dicWind objectForKey:@"speed"];
         weather.windDeg = [dicWind objectForKey:@"deg"];
-        
         weather.nameCity = [jsonData objectForKey:@"name"];
-        
     }
     
     return self;

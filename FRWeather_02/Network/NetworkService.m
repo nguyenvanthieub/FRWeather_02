@@ -10,13 +10,10 @@
 
 @implementation NetworkService
 
-
 +(void)getData:(NSString *)url parameter:(NSDictionary *)parameter complete:(void(^)(NSDictionary *data, NSError *error))handeBlock{
-    
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
-    
     [sessionManager GET: url
-                  parameters: nil
+                  parameters: parameter
                     progress: ^(NSProgress * _Nonnull downloadProgress) {
                         
                     } success: ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -24,7 +21,6 @@
                     } failure: ^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                         handeBlock(nil, error);
                     }];
-    
 }
 
 @end

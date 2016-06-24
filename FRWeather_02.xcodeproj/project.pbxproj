@@ -20,10 +20,12 @@
 		5139BAC91D1015BA0024F878 /* APIWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BAC81D1015BA0024F878 /* APIWeather.m */; };
 		5139BACC1D1016150024F878 /* ForecastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BACB1D1016150024F878 /* ForecastModel.m */; };
 		5139BACF1D10161C0024F878 /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BACE1D10161C0024F878 /* WeatherModel.m */; };
-		5139BAD21D10165F0024F878 /* CityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BAD11D10165F0024F878 /* CityTableViewController.m */; };
+		5139BAD21D10165F0024F878 /* ListCityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BAD11D10165F0024F878 /* ListCityTableViewController.m */; };
 		5139BAD71D1016BD0024F878 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BAD61D1016BD0024F878 /* HomeViewController.m */; };
 		5139BADA1D1016C70024F878 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BAD91D1016C70024F878 /* LoginViewController.m */; };
-		514D943A1D18D36100A77155 /* FacebookService.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D94391D18D36100A77155 /* FacebookService.m */; };
+		514C29B51D1B811400B9DB3A /* FacebookService.m in Sources */ = {isa = PBXBuildFile; fileRef = 514C29B41D1B811400B9DB3A /* FacebookService.m */; };
+		514C29B81D1B880900B9DB3A /* SearchCityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 514C29B71D1B880900B9DB3A /* SearchCityTableViewController.m */; };
+		514C29BF1D1BA1C700B9DB3A /* Position.m in Sources */ = {isa = PBXBuildFile; fileRef = 514C29BE1D1BA1C700B9DB3A /* Position.m */; };
 		518C823B1D1236FC00B427FC /* ForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 518C82381D1236FB00B427FC /* ForecastTableViewCell.m */; };
 		518C823C1D1236FC00B427FC /* HeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 518C823A1D1236FC00B427FC /* HeaderTableViewCell.m */; };
 		518C82411D1239D000B427FC /* HeaderItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518C82401D1239D000B427FC /* HeaderItem.xib */; };
@@ -97,14 +99,18 @@
 		5139BACB1D1016150024F878 /* ForecastModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForecastModel.m; path = Models/Forecast/ForecastModel.m; sourceTree = "<group>"; };
 		5139BACD1D10161C0024F878 /* WeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherModel.h; path = Models/Weather/WeatherModel.h; sourceTree = "<group>"; };
 		5139BACE1D10161C0024F878 /* WeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherModel.m; path = Models/Weather/WeatherModel.m; sourceTree = "<group>"; };
-		5139BAD01D10165F0024F878 /* CityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityTableViewController.h; path = Controller/City/CityTableViewController.h; sourceTree = "<group>"; };
-		5139BAD11D10165F0024F878 /* CityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityTableViewController.m; path = Controller/City/CityTableViewController.m; sourceTree = "<group>"; };
+		5139BAD01D10165F0024F878 /* ListCityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListCityTableViewController.h; path = Controller/City/ListCityTableViewController.h; sourceTree = "<group>"; };
+		5139BAD11D10165F0024F878 /* ListCityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListCityTableViewController.m; path = Controller/City/ListCityTableViewController.m; sourceTree = "<group>"; };
 		5139BAD51D1016BD0024F878 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Controller/HomeWeather/HomeViewController.h; sourceTree = "<group>"; };
 		5139BAD61D1016BD0024F878 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Controller/HomeWeather/HomeViewController.m; sourceTree = "<group>"; };
 		5139BAD81D1016C70024F878 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controller/Login/LoginViewController.h; sourceTree = "<group>"; };
 		5139BAD91D1016C70024F878 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controller/Login/LoginViewController.m; sourceTree = "<group>"; };
-		514D94381D18D36100A77155 /* FacebookService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookService.h; sourceTree = "<group>"; };
-		514D94391D18D36100A77155 /* FacebookService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookService.m; sourceTree = "<group>"; };
+		514C29B31D1B811400B9DB3A /* FacebookService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookService.h; path = Network/FacebookService.h; sourceTree = "<group>"; };
+		514C29B41D1B811400B9DB3A /* FacebookService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookService.m; path = Network/FacebookService.m; sourceTree = "<group>"; };
+		514C29B61D1B880900B9DB3A /* SearchCityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchCityTableViewController.h; path = Controller/City/SearchCityTableViewController.h; sourceTree = "<group>"; };
+		514C29B71D1B880900B9DB3A /* SearchCityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchCityTableViewController.m; path = Controller/City/SearchCityTableViewController.m; sourceTree = "<group>"; };
+		514C29BD1D1BA1C700B9DB3A /* Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Position.h; path = Models/Position/Position.h; sourceTree = "<group>"; };
+		514C29BE1D1BA1C700B9DB3A /* Position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Position.m; path = Models/Position/Position.m; sourceTree = "<group>"; };
 		518C82371D1236FB00B427FC /* ForecastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForecastTableViewCell.h; path = Controller/HomeWeather/Cell/ForecastTableViewCell.h; sourceTree = "<group>"; };
 		518C82381D1236FB00B427FC /* ForecastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForecastTableViewCell.m; path = Controller/HomeWeather/Cell/ForecastTableViewCell.m; sourceTree = "<group>"; };
 		518C82391D1236FB00B427FC /* HeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderTableViewCell.h; path = Controller/HomeWeather/Cell/HeaderTableViewCell.h; sourceTree = "<group>"; };
@@ -261,8 +267,10 @@
 		5139BA331D0FABFE0024F878 /* City */ = {
 			isa = PBXGroup;
 			children = (
-				5139BAD01D10165F0024F878 /* CityTableViewController.h */,
-				5139BAD11D10165F0024F878 /* CityTableViewController.m */,
+				5139BAD01D10165F0024F878 /* ListCityTableViewController.h */,
+				5139BAD11D10165F0024F878 /* ListCityTableViewController.m */,
+				514C29B61D1B880900B9DB3A /* SearchCityTableViewController.h */,
+				514C29B71D1B880900B9DB3A /* SearchCityTableViewController.m */,
 			);
 			name = City;
 			sourceTree = "<group>";
@@ -270,6 +278,7 @@
 		5139BA371D0FAD040024F878 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				514C29BC1D1BA18D00B9DB3A /* Position */,
 				5139BA3C1D0FAD2F0024F878 /* Weather */,
 				5139BA3B1D0FAD270024F878 /* Forecast */,
 			);
@@ -317,8 +326,8 @@
 				5139BAC21D1015520024F878 /* Connection.m */,
 				5139BAC31D1015520024F878 /* NetworkService.h */,
 				5139BAC41D1015520024F878 /* NetworkService.m */,
-				514D94381D18D36100A77155 /* FacebookService.h */,
-				514D94391D18D36100A77155 /* FacebookService.m */,
+				514C29B31D1B811400B9DB3A /* FacebookService.h */,
+				514C29B41D1B811400B9DB3A /* FacebookService.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -329,6 +338,15 @@
 				5139BAC01D1014CE0024F878 /* Config.h */,
 			);
 			name = Config;
+			sourceTree = "<group>";
+		};
+		514C29BC1D1BA18D00B9DB3A /* Position */ = {
+			isa = PBXGroup;
+			children = (
+				514C29BD1D1BA1C700B9DB3A /* Position.h */,
+				514C29BE1D1BA1C700B9DB3A /* Position.m */,
+			);
+			name = Position;
 			sourceTree = "<group>";
 		};
 		518C823D1D1238E500B427FC /* Xib */ = {
@@ -609,21 +627,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				514C29B81D1B880900B9DB3A /* SearchCityTableViewController.m in Sources */,
 				5139BAC91D1015BA0024F878 /* APIWeather.m in Sources */,
 				5139B9FF1D0F9E270024F878 /* AppDelegate.m in Sources */,
-				514D943A1D18D36100A77155 /* FacebookService.m in Sources */,
 				5139BAD71D1016BD0024F878 /* HomeViewController.m in Sources */,
 				5125E1121D17DC7E006B34DC /* HeaderItem.m in Sources */,
 				5139BACF1D10161C0024F878 /* WeatherModel.m in Sources */,
 				518C823C1D1236FC00B427FC /* HeaderTableViewCell.m in Sources */,
 				5139BADA1D1016C70024F878 /* LoginViewController.m in Sources */,
+				514C29B51D1B811400B9DB3A /* FacebookService.m in Sources */,
 				518C82481D12A33900B427FC /* Common.m in Sources */,
 				5139BAC61D1015520024F878 /* NetworkService.m in Sources */,
 				5139BAC51D1015520024F878 /* Connection.m in Sources */,
-				5139BAD21D10165F0024F878 /* CityTableViewController.m in Sources */,
+				5139BAD21D10165F0024F878 /* ListCityTableViewController.m in Sources */,
 				5139BACC1D1016150024F878 /* ForecastModel.m in Sources */,
 				5139B9FC1D0F9E270024F878 /* main.m in Sources */,
 				518C823B1D1236FC00B427FC /* ForecastTableViewCell.m in Sources */,
+				514C29BF1D1BA1C700B9DB3A /* Position.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

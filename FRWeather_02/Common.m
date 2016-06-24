@@ -25,4 +25,18 @@
     return [dayFormat stringFromDate:dateHour];
 }
 
++ (void)saveListCity:(NSMutableArray *)weatherCityArray {
+    NSUserDefaults *userDefault=[NSUserDefaults standardUserDefaults];
+    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:weatherCityArray];
+    [userDefault setObject:myEncodedObject forKey:[NSString stringWithFormat:@"listCity"]];
+}
+
++ (NSArray *)getListCity {
+    NSArray *decodedArray = [NSArray new];
+    NSUserDefaults *userDefault=[NSUserDefaults standardUserDefaults];
+    NSData *decodedObject = [userDefault objectForKey: [NSString stringWithFormat:@"listCity"]];
+    decodedArray =[NSKeyedUnarchiver unarchiveObjectWithData: decodedObject];
+    return decodedArray;
+}
+
 @end

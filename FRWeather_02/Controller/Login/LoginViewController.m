@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"LOGIN";
     if ([FBSDKAccessToken currentAccessToken]) {
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

@@ -28,6 +28,6 @@
 @property (strong, nonatomic) NSString *timeDay;
 @property (strong, nonatomic) NSString *timeHour;
 
--(instancetype)init : (NSDictionary *)jsonData;
+-(instancetype)init:(NSDictionary *)jsonData;
 
 @end
