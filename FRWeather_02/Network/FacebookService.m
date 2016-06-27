@@ -14,9 +14,7 @@
     FBSDKLoginManager *fbLoginManager = [[FBSDKLoginManager alloc] init];
     
     [fbLoginManager logInWithReadPermissions:@[@"email"] fromViewController:viewController handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-        if (error) {
-            handlerBlock(nil);
-        } else if (result.isCancelled) {
+        if (error || result.isCancelled) {
             handlerBlock(nil);
         } else {
             if ([result.grantedPermissions containsObject:@"email"]) {
@@ -29,9 +27,7 @@
                         } else {
                             NSDictionary *data = (NSDictionary *)result;
                             [fbLoginManager logInWithPublishPermissions:@[@"publish_actions"] fromViewController:viewController handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-                                if (error) {
-                                    handlerBlock(nil);
-                                } else if (result.isCancelled) {
+                                if (error || result.isCancelled) {
                                     handlerBlock(nil);
                                 } else {
                                     handlerBlock(data);

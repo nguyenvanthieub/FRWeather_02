@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Position.h"
 
 @interface Common : NSObject
 + (NSString *)convertIntervalToDay:(double )interval;
 + (NSString *)convertStringToHour:(NSString *)timeString;
++ (void)saveListCity:(NSMutableArray *)weatherCityArray;
++ (NSArray *)getListCity;
 @end

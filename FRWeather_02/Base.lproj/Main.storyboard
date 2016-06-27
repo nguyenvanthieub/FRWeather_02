@@ -225,16 +225,16 @@
             </objects>
             <point key="canvasLocation" x="2277" y="524"/>
         </scene>
-        <!--City Table View Controller-->
+        <!--List City Table View Controller-->
         <scene sceneID="MkW-wu-9WZ">
             <objects>
-                <tableViewController id="XPB-zN-EQi" customClass="CityTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ListCityTableViewController" id="XPB-zN-EQi" customClass="ListCityTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Z4-tS-46S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wbr-66-B9I">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityCellList" id="wbr-66-B9I">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wbr-66-B9I" id="qM4-1Z-ZeE">
