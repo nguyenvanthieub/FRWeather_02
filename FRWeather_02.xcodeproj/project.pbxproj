@@ -23,6 +23,7 @@
 		5139BAD21D10165F0024F878 /* ListCityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BAD11D10165F0024F878 /* ListCityTableViewController.m */; };
 		5139BAD71D1016BD0024F878 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BAD61D1016BD0024F878 /* HomeViewController.m */; };
 		5139BADA1D1016C70024F878 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139BAD91D1016C70024F878 /* LoginViewController.m */; };
+		5148E1641D220965008087CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5148E1631D220965008087CC /* GoogleService-Info.plist */; };
 		514C29B51D1B811400B9DB3A /* FacebookService.m in Sources */ = {isa = PBXBuildFile; fileRef = 514C29B41D1B811400B9DB3A /* FacebookService.m */; };
 		514C29B81D1B880900B9DB3A /* SearchCityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 514C29B71D1B880900B9DB3A /* SearchCityTableViewController.m */; };
 		514C29BF1D1BA1C700B9DB3A /* Position.m in Sources */ = {isa = PBXBuildFile; fileRef = 514C29BE1D1BA1C700B9DB3A /* Position.m */; };
@@ -105,6 +106,7 @@
 		5139BAD61D1016BD0024F878 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Controller/HomeWeather/HomeViewController.m; sourceTree = "<group>"; };
 		5139BAD81D1016C70024F878 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controller/Login/LoginViewController.h; sourceTree = "<group>"; };
 		5139BAD91D1016C70024F878 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controller/Login/LoginViewController.m; sourceTree = "<group>"; };
+		5148E1631D220965008087CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		514C29B31D1B811400B9DB3A /* FacebookService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookService.h; path = Network/FacebookService.h; sourceTree = "<group>"; };
 		514C29B41D1B811400B9DB3A /* FacebookService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookService.m; path = Network/FacebookService.m; sourceTree = "<group>"; };
 		514C29B61D1B880900B9DB3A /* SearchCityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchCityTableViewController.h; path = Controller/City/SearchCityTableViewController.h; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				5139BA031D0F9E270024F878 /* Main.storyboard */,
 				5139BA061D0F9E270024F878 /* Assets.xcassets */,
 				5139BA081D0F9E270024F878 /* LaunchScreen.storyboard */,
+				5148E1631D220965008087CC /* GoogleService-Info.plist */,
 				5139BA0B1D0F9E270024F878 /* Info.plist */,
 				5139B9FA1D0F9E270024F878 /* Supporting Files */,
 			);
@@ -491,9 +494,12 @@
 				TargetAttributes = {
 					5139B9F61D0F9E270024F878 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = DWAR2ZV53F;
+						DevelopmentTeam = Z4ZNZ62PTW;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -552,6 +558,7 @@
 				51CEE0C31D1136360068884D /* 13d.png in Resources */,
 				5139BA071D0F9E270024F878 /* Assets.xcassets in Resources */,
 				5139BA051D0F9E270024F878 /* Main.storyboard in Resources */,
+				5148E1641D220965008087CC /* GoogleService-Info.plist in Resources */,
 				51CEE0BF1D1136360068884D /* 10d.png in Resources */,
 				51CEE0B51D1136360068884D /* 01d.png in Resources */,
 				51CEE0BC1D1136360068884D /* 04n.png in Resources */,
@@ -796,7 +803,7 @@
 				INFOPLIST_FILE = FRWeather_02/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.framgia.FRWeather-02";
+				PRODUCT_BUNDLE_IDENTIFIER = com.framgia.FRWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -816,7 +823,7 @@
 				INFOPLIST_FILE = FRWeather_02/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.framgia.FRWeather-02";
+				PRODUCT_BUNDLE_IDENTIFIER = com.framgia.FRWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

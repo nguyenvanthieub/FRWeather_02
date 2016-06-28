@@ -26,13 +26,15 @@
                             handlerBlock(nil);
                         } else {
                             NSDictionary *data = (NSDictionary *)result;
-                            [fbLoginManager logInWithPublishPermissions:@[@"publish_actions"] fromViewController:viewController handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-                                if (error || result.isCancelled) {
-                                    handlerBlock(nil);
-                                } else {
-                                    handlerBlock(data);
-                                }
-                            }];
+                            handlerBlock(data);
+//                            [fbLoginManager logInWithPublishPermissions:@[@"publish_actions"] fromViewController:viewController handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+//                                if (error || result.isCancelled) {
+//                                    handlerBlock(nil);
+//                                } else {
+//                                    handlerBlock(data);
+//                                }
+//                            }];
+                            
                         }
                     }];
                 }

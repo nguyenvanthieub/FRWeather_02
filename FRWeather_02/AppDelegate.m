@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 @import GoogleMaps;
-#define GOOGLE_MAP_KEY @"AIzaSyA3wLN5LofSkoWdZr2mSp5DK3wHEEfLudE"
+@import Firebase;
+@import FirebaseMessaging;
+#define GOOGLE_MAP_KEY @"AIzaSyD-zpLTnDQhWsjWnUdjUv3bMHi_wVeBulg"
 
 @interface AppDelegate ()
 
@@ -20,8 +22,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [FIRApp configure];
     [GMSServices provideAPIKey:GOOGLE_MAP_KEY];
     [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeAlert
+                                                                                         | UIUserNotificationTypeBadge
+                                                                                         | UIUserNotificationTypeSound) categories:nil];
+    [application registerForRemoteNotifications];
+    [application registerUserNotificationSettings:settings];
+    
     
     return YES;
 }
@@ -32,6 +42,13 @@
                                                         sourceApplication:sourceApplication
                                                                annotation:annotation];
     return handled;
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler {
+    NSLog(@"Message ID: %@", userInfo[@"gcm.message_id"]);
+    [[FIRMessaging messaging] appDidReceiveMessage:userInfo];
+    
+    NSLog(@"userInfo=>%@", userInfo);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
