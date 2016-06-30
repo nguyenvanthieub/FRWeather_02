@@ -56,12 +56,14 @@
 }
 
 - (void)requestData {
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    double lat = [userDefault doubleForKey:@"currentLat"];
-    double lon = [userDefault doubleForKey:@"currentLon"];
-    Position *position = [Position new];
-    position.lat = lat;
-    position.lon = lon;
+//    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+//    double lat = [userDefault doubleForKey:@"currentLat"];
+//    double lon = [userDefault doubleForKey:@"currentLon"];
+//    Position *position = [Position new];
+//    position.lat = lat;
+//    position.lon = lon;
+    
+    Position *position = [Common getCurrentPosition];
     [self requestDataPosition:position];
 }
 

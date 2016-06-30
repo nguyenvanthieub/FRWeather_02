@@ -2,9 +2,8 @@
 # platform :ios, '9.0'
 
 target 'FRWeather_02' do
-  pod 'AFNetworking','~> 3.1.0'
-   pod 'Firebase’
-   pod 'Firebase/Messaging’
+   pod 'AFNetworking','~> 3.1.0'
+   pod 'OneSignal'
    pod 'GoogleMaps'
    pod ‘FBSDKCoreKit’
    pod ‘FBSDKLoginKit’

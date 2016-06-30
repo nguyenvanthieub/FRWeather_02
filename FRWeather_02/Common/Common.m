@@ -39,4 +39,21 @@
     return decodedArray;
 }
 
++ (Position *)getCurrentPosition {
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    double lat = [userDefault doubleForKey:@"currentLat"];
+    double lon = [userDefault doubleForKey:@"currentLon"];
+    Position *position = [Position new];
+    position.lat = lat;
+    position.lon = lon;
+    return position;
+}
+
++ (void)setCurrentPosition:(Position *)city {
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault setDouble:city.lat forKey:@"currentLat"];
+    [userDefault setDouble:city.lon forKey:@"currentLon"];
+    [userDefault synchronize];
+}
+
 @end
