@@ -23,7 +23,7 @@
 
 - (void)setScrollData:(NSMutableArray *)scrollData {
     
-    CGFloat viewWidth = 80;
+    CGFloat viewWidth = 70;
     CGFloat viewHeight = self.scrollViewHeader.frame.size.height;
     CGFloat xPosition = 0;
     CGFloat scrollViewContentSize = 0;
@@ -32,18 +32,17 @@
     NSUInteger count = scrollData.count;
     scrollViewContentSize += (viewWidth + space) * (count);
     self.scrollViewHeader.contentSize = CGSizeMake(scrollViewContentSize, viewHeight);
-    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, scrollViewContentSize, viewHeight)];
+    [self.scrollViewHeader addSubview:view];
     for (int index = 0; index < count; index++) {
         NSArray *xib = [[NSBundle mainBundle] loadNibNamed:@"HeaderItem" owner:self options:nil];
         HeaderItem *headerCell = xib[0];
         WeatherModel *weatherModel = [scrollData objectAtIndex:index];
         [headerCell setFrame:CGRectMake(xPosition, 0, viewWidth, viewHeight)];
         [headerCell setHeaderData:weatherModel];
-        
-        [self.scrollViewHeader addSubview:headerCell];
+        [view addSubview:headerCell];
         
         xPosition += viewWidth + space;
-        
     };
 }
 
