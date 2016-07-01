@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5125E1121D17DC7E006B34DC /* HeaderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5125E1111D17DC7E006B34DC /* HeaderItem.m */; };
+		51297D951D237F6C00EE68FA /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 51297D941D237F6C00EE68FA /* Common.m */; };
+		51297D981D237F8400EE68FA /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 51297D971D237F8400EE68FA /* NotificationService.m */; };
 		5139B9FC1D0F9E270024F878 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139B9FB1D0F9E270024F878 /* main.m */; };
 		5139B9FF1D0F9E270024F878 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5139B9FE1D0F9E270024F878 /* AppDelegate.m */; };
 		5139BA051D0F9E270024F878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5139BA031D0F9E270024F878 /* Main.storyboard */; };
@@ -30,7 +32,6 @@
 		518C823B1D1236FC00B427FC /* ForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 518C82381D1236FB00B427FC /* ForecastTableViewCell.m */; };
 		518C823C1D1236FC00B427FC /* HeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 518C823A1D1236FC00B427FC /* HeaderTableViewCell.m */; };
 		518C82411D1239D000B427FC /* HeaderItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518C82401D1239D000B427FC /* HeaderItem.xib */; };
-		518C82481D12A33900B427FC /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 518C82471D12A33900B427FC /* Common.m */; };
 		51CEE0B51D1136360068884D /* 01d.png in Resources */ = {isa = PBXBuildFile; fileRef = 51CEE0A31D1136360068884D /* 01d.png */; };
 		51CEE0B61D1136360068884D /* 01n.png in Resources */ = {isa = PBXBuildFile; fileRef = 51CEE0A41D1136360068884D /* 01n.png */; };
 		51CEE0B71D1136360068884D /* 02d.png in Resources */ = {isa = PBXBuildFile; fileRef = 51CEE0A51D1136360068884D /* 02d.png */; };
@@ -75,6 +76,10 @@
 		36EF2E6195B19784BF9415E8 /* libPods-FRWeather_02.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FRWeather_02.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5125E1101D17DC7E006B34DC /* HeaderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderItem.h; path = Controller/HomeWeather/Xib/HeaderItem.h; sourceTree = "<group>"; };
 		5125E1111D17DC7E006B34DC /* HeaderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderItem.m; path = Controller/HomeWeather/Xib/HeaderItem.m; sourceTree = "<group>"; };
+		51297D931D237F6C00EE68FA /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = Common/Common.h; sourceTree = "<group>"; };
+		51297D941D237F6C00EE68FA /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Common.m; path = Common/Common.m; sourceTree = "<group>"; };
+		51297D961D237F8400EE68FA /* NotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationService.h; path = NotificationService/NotificationService.h; sourceTree = "<group>"; };
+		51297D971D237F8400EE68FA /* NotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationService.m; path = NotificationService/NotificationService.m; sourceTree = "<group>"; };
 		5139B9F71D0F9E270024F878 /* FRWeather_02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FRWeather_02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5139B9FB1D0F9E270024F878 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5139B9FD1D0F9E270024F878 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,8 +123,6 @@
 		518C82391D1236FB00B427FC /* HeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderTableViewCell.h; path = Controller/HomeWeather/Cell/HeaderTableViewCell.h; sourceTree = "<group>"; };
 		518C823A1D1236FC00B427FC /* HeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderTableViewCell.m; path = Controller/HomeWeather/Cell/HeaderTableViewCell.m; sourceTree = "<group>"; };
 		518C82401D1239D000B427FC /* HeaderItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderItem.xib; path = Controller/HomeWeather/Xib/HeaderItem.xib; sourceTree = "<group>"; };
-		518C82461D12A33900B427FC /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
-		518C82471D12A33900B427FC /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		51CEE0A31D1136360068884D /* 01d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 01d.png; path = Image/01d.png; sourceTree = "<group>"; };
 		51CEE0A41D1136360068884D /* 01n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 01n.png; path = Image/01n.png; sourceTree = "<group>"; };
 		51CEE0A51D1136360068884D /* 02d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 02d.png; path = Image/02d.png; sourceTree = "<group>"; };
@@ -196,7 +199,7 @@
 				5139BA4C1D0FAE8F0024F878 /* Config */,
 				5139BA481D0FAE620024F878 /* Network */,
 				5139BA441D0FAE2C0024F878 /* APIOpenWeather */,
-				5139BA401D0FADBE0024F878 /* NetworkService */,
+				5139BA401D0FADBE0024F878 /* NotificationService */,
 				5139BA371D0FAD040024F878 /* Models */,
 				5139BA2D1D0FAA240024F878 /* Controller */,
 				5139B9FD1D0F9E270024F878 /* AppDelegate.h */,
@@ -306,11 +309,13 @@
 			name = Weather;
 			sourceTree = "<group>";
 		};
-		5139BA401D0FADBE0024F878 /* NetworkService */ = {
+		5139BA401D0FADBE0024F878 /* NotificationService */ = {
 			isa = PBXGroup;
 			children = (
+				51297D961D237F8400EE68FA /* NotificationService.h */,
+				51297D971D237F8400EE68FA /* NotificationService.m */,
 			);
-			name = NetworkService;
+			name = NotificationService;
 			sourceTree = "<group>";
 		};
 		5139BA441D0FAE2C0024F878 /* APIOpenWeather */ = {
@@ -365,8 +370,8 @@
 		518C82451D12A29B00B427FC /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				518C82461D12A33900B427FC /* Common.h */,
-				518C82471D12A33900B427FC /* Common.m */,
+				51297D931D237F6C00EE68FA /* Common.h */,
+				51297D941D237F6C00EE68FA /* Common.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -640,10 +645,11 @@
 				5139BAD71D1016BD0024F878 /* HomeViewController.m in Sources */,
 				5125E1121D17DC7E006B34DC /* HeaderItem.m in Sources */,
 				5139BACF1D10161C0024F878 /* WeatherModel.m in Sources */,
+				51297D951D237F6C00EE68FA /* Common.m in Sources */,
 				518C823C1D1236FC00B427FC /* HeaderTableViewCell.m in Sources */,
+				51297D981D237F8400EE68FA /* NotificationService.m in Sources */,
 				5139BADA1D1016C70024F878 /* LoginViewController.m in Sources */,
 				514C29B51D1B811400B9DB3A /* FacebookService.m in Sources */,
-				518C82481D12A33900B427FC /* Common.m in Sources */,
 				5139BAC61D1015520024F878 /* NetworkService.m in Sources */,
 				5139BAC51D1015520024F878 /* Connection.m in Sources */,
 				5139BAD21D10165F0024F878 /* ListCityTableViewController.m in Sources */,

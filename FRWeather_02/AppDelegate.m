@@ -9,30 +9,23 @@
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 @import GoogleMaps;
-@import Firebase;
-@import FirebaseMessaging;
+#import "NotificationService.h"
+
 #define GOOGLE_MAP_KEY @"AIzaSyD-zpLTnDQhWsjWnUdjUv3bMHi_wVeBulg"
 
-@interface AppDelegate ()
 
+@interface AppDelegate ()
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    [FIRApp configure];
     [GMSServices provideAPIKey:GOOGLE_MAP_KEY];
     [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
-    
-    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeAlert
-                                                                                         | UIUserNotificationTypeBadge
-                                                                                         | UIUserNotificationTypeSound) categories:nil];
-    [application registerForRemoteNotifications];
-    [application registerUserNotificationSettings:settings];
-    
-    
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    [NotificationService initOneSignal:launchOptions];
+   
     return YES;
 }
 
@@ -45,10 +38,25 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler {
-    NSLog(@"Message ID: %@", userInfo[@"gcm.message_id"]);
-    [[FIRMessaging messaging] appDidReceiveMessage:userInfo];
-    
-    NSLog(@"userInfo=>%@", userInfo);
+    NSDictionary *aps = userInfo[@"aps"];
+    if (aps) {
+        if (application.applicationState == UIApplicationStateBackground) {
+            if (aps[@"content-available"]) {
+                int contentValue = [aps[@"content-available"] intValue];
+                if (contentValue == 1) {
+                    [self application:application performFetchWithCompletionHandler:^(UIBackgroundFetchResult result) {
+                        completionHandler(result);
+                    }];
+                }
+            }
+        }
+    }
+}
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    [NotificationService pushLocalNotification:^(UIBackgroundFetchResult result) {
+        completionHandler(result);
+    }];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -14,4 +14,6 @@
 + (NSString *)convertStringToHour:(NSString *)timeString;
 + (void)saveListCity:(NSMutableArray *)weatherCityArray;
 + (NSArray *)getListCity;
++ (Position *)getCurrentPosition;
++ (void)setCurrentPosition:(Position *)position;
 @end
