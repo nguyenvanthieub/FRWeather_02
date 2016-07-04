@@ -70,7 +70,7 @@
 - (void)requestDataPosition:(Position *)position {
     __block HomeViewController  *weakSelf = self;
     [self.apiWeather getDataWeather:URL_WEATHER andPosition:position complete:^(WeatherModel *weather) {
-        weakSelf.city.text = weather.nameCity;
+        weakSelf.city.text = position.address;
         weakSelf.weatherDescription.text = weather.weatherName;
         weakSelf.weatherTmp.text = [NSString stringWithFormat:@"%@°",weather.temp_min];
     }];
