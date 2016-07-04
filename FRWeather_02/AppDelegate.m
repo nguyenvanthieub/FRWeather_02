@@ -10,6 +10,8 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 @import GoogleMaps;
 #import "NotificationService.h"
+#import "LoginViewController.h"
+#import "HomeViewController.h"
 
 #define GOOGLE_MAP_KEY @"AIzaSyD-zpLTnDQhWsjWnUdjUv3bMHi_wVeBulg"
 
@@ -21,8 +23,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [GMSServices provideAPIKey:GOOGLE_MAP_KEY];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    UIStoryboard *st = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginViewController *loginVC = [st instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    HomeViewController *homeVC = [st instantiateViewControllerWithIdentifier:@"HomeViewController"];
+    UINavigationController *nav;
     [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    if ([FBSDKAccessToken currentAccessToken]) {
+        nav = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    } else {
+        nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    }
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+    
+    [GMSServices provideAPIKey:GOOGLE_MAP_KEY];
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     [NotificationService initOneSignal:launchOptions];
    

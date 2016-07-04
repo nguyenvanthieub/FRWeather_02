@@ -72,7 +72,7 @@
     [self.apiWeather getDataWeather:URL_WEATHER andPosition:position complete:^(WeatherModel *weather) {
         weakSelf.city.text = weather.nameCity;
         weakSelf.weatherDescription.text = weather.weatherName;
-        weakSelf.weatherTmp.text = [NSString stringWithFormat:@"%@ °",weather.temp_min];
+        weakSelf.weatherTmp.text = [NSString stringWithFormat:@"%@°",weather.temp_min];
     }];
     
     [self.apiWeather getDataForecast:URL_FORECAST_DAY andPosition:position isForecast:TRUE complete:^(ForecastModel *forecast) {

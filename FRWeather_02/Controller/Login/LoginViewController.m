@@ -16,14 +16,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"LOGIN";
-    if ([FBSDKAccessToken currentAccessToken]) {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSString *name = [defaults stringForKey:@"name"];
-        NSURL *url = [NSURL URLWithString:[defaults stringForKey:@"url"]];
-        
-        self.nameUser.text = name;
-        [self.imageProfile sd_setImageWithURL:url];
-    }
+//    if ([FBSDKAccessToken currentAccessToken]) {
+//        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//        NSString *name = [defaults stringForKey:@"name"];
+//        NSURL *url = [NSURL URLWithString:[defaults stringForKey:@"url"]];
+//        
+//        self.nameUser.text = name;
+//        [self.imageProfile sd_setImageWithURL:url];
+//        [self changeView];
+//    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

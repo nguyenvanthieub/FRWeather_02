@@ -24,8 +24,12 @@
 - (void)setCellData:(WeatherModel *)weatherModel {
     self.dayForecast.text = weatherModel.timeDay;
     self.imageForecast.image = [UIImage imageNamed:weatherModel.weatherIcon];
-    self.tempMax.text = weatherModel.temp_max;
-    self.tempMin.text = weatherModel.temp_min;
+    if (weatherModel.temp_max) {
+        self.tempMax.text = [NSString stringWithFormat:@"%@°",weatherModel.temp_max];
+    }
+    if (weatherModel.temp_min) {
+        self.tempMin.text = [NSString stringWithFormat:@"%@°",weatherModel.temp_min];
+    }
 }
 
 @end
