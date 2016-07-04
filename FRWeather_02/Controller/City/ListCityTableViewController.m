@@ -69,10 +69,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Position *city = weatherCityArray[indexPath.row];
-//    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-//    [userDefault setDouble:city.lat forKey:@"currentLat"];
-//    [userDefault setDouble:city.lon forKey:@"currentLon"];
-//    [userDefault synchronize];
     [Common setCurrentPosition:city];
     if (self.delegate && [self.delegate respondsToSelector:@selector(getWeatherPosition:)]) {
         [self.delegate getWeatherPosition:city];
