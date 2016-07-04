@@ -16,7 +16,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Npu-FZ-iGC">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01d.png" translatesAutoresizingMaskIntoConstraints="NO" id="Npu-FZ-iGC">
                     <rect key="frame" x="15" y="30" width="35" height="35"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="35" id="GuQ-RQ-7sR"/>
@@ -50,4 +50,7 @@
             <point key="canvasLocation" x="265.5" y="138.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="01d.png" width="50" height="50"/>
+    </resources>
 </document>

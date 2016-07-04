@@ -43,6 +43,11 @@
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     double lat = [userDefault doubleForKey:@"currentLat"];
     double lon = [userDefault doubleForKey:@"currentLon"];
+    //default hanoi
+    if (lat == 0.0 && lon == 0.0) {
+        lat = 21.0245;
+        lon = 105.84117;
+    }
     Position *position = [Position new];
     position.lat = lat;
     position.lon = lon;

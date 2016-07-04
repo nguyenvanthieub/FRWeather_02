@@ -11,9 +11,16 @@
 @implementation HeaderItem
 
 - (void)setHeaderData:(WeatherModel *)weatherModel {
-    self.time.text = weatherModel.timeHour;
-    self.iconWeather.image = [UIImage imageNamed:weatherModel.weatherIcon];
-    self.temp.text = weatherModel.temp;
+    if (weatherModel.timeHour) {
+        self.time.text = [NSString stringWithFormat:@"%@h",weatherModel.timeHour];
+    }
+    if (weatherModel.weatherIcon) {
+        self.iconWeather.image = [UIImage imageNamed:weatherModel.weatherIcon];
+    }
+    
+    if (weatherModel.temp) {
+        self.temp.text = [NSString stringWithFormat:@"%@°",weatherModel.temp];
+    }
 }
 
 @end

@@ -29,7 +29,7 @@
     CGFloat scrollViewContentSize = 0;
     CGFloat space = 5;
     
-    NSUInteger count = scrollData.count;
+    NSUInteger count = 8;
     scrollViewContentSize += (viewWidth + space) * (count);
     self.scrollViewHeader.contentSize = CGSizeMake(scrollViewContentSize, viewHeight);
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, scrollViewContentSize, viewHeight)];
@@ -41,9 +41,8 @@
         [headerCell setFrame:CGRectMake(xPosition, 0, viewWidth, viewHeight)];
         [headerCell setHeaderData:weatherModel];
         [view addSubview:headerCell];
-        
         xPosition += viewWidth + space;
-    };
+    }
 }
 
 @end
